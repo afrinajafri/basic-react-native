@@ -15,9 +15,7 @@ class App extends Component {
 
     return(
     <NavigationContainer>
-    <MyApp>
-
-    </MyApp>
+    <MyApp/> 
    </NavigationContainer>
     )
     
