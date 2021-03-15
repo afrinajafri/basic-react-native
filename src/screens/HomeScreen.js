@@ -1,84 +1,83 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, Image,
-  Pressable, Button, TextInput, KeyboardAvoidingView, Platform,
-  ScrollView
-
- } from 'react-native'
-
-import Cell from '../components/Cell'
+    Pressable, Button, TextInput, KeyboardAvoidingView, Platform,
+    ScrollView
+} from 'react-native'
+import Cell from '../components/Cell';
 
 class HomeScreen extends Component {
 
     constructor(props){
-
         super(props);
-    
         this.state = {
-          text: '',
+            text: '',
         }
-    
-      }
+    }  
 
+   render() {
+       return (
+        <View style={styles.container} >
+        <KeyboardAvoidingView
+         behavior={Platform.OS === "ios" ? "padding" : "height"}      
+       >
+        <ScrollView>
+        <Text>
+          {this.state.text}
+        </Text>
+  
+        <Cell onPress={()=>{ 
+            
+            this.props.navigation.navigate('second')
 
-    render() {
-        return (     
-            <View style={styles.container} >
-            <KeyboardAvoidingView
-             behavior={Platform.OS === "ios" ? "padding" : "height"}      
-           >
-            <ScrollView>
-            <Text>
-              {this.state.text}
-            </Text>
-            
-            <Cell title={"ABC 1"} />
-            <Cell title={"ABC 1"} />
-            <Cell title={"ABC 1"} />
-            
-      
-            <TextInput 
-              style={{
-                padding:8,
-                // backgroundColor:'skyblue',
-                marginVertical: 6,
-                borderColor: 'grey',
-                borderStyle: 'solid',
-                borderWidth: 1,
-              }}
-      
-              placeholder="Input"
-      
-              onChangeText={(text)=>{
-                this.setState({
-                  text: text,
-                })
-              }}
-      
-            />
-      
-             
-            <Pressable onPress={()=>{
-              alert(this.state.text);
-      
-            }
-            }>
-      
-            <Button
-              onPress={()=>{}}
-              title="Learn More"
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-            />  
-      
-            <Text>I'm pressable!</Text>
-            </Pressable>
-      
-            </ScrollView>
-            </KeyboardAvoidingView>
-            </View>
-          )
-    }
+         }} title={"ABC 1"} />
+
+        <Cell title={"ABC 1"} />
+        <Cell title={"ABC 1"} />
+  
+        <TextInput 
+          style={{
+            padding:8,
+            // backgroundColor:'skyblue',
+            marginVertical: 6,
+            borderColor: 'grey',
+            borderStyle: 'solid',
+            borderWidth: 1,
+          }}
+  
+          placeholder="Input"
+  
+          onChangeText={(text)=>{
+            this.setState({
+              text: text,
+            })
+          }}
+  
+        />
+  
+         
+        <Pressable onPress={()=>{
+          alert(this.state.text);
+  
+        }
+        }>
+  
+        <Button
+          onPress={()=>{}}
+          title="Learn More"
+          color="#841584"
+          accessibilityLabel="Learn more about this purple button"
+        />  
+  
+        <Text>I'm pressable!</Text>
+        </Pressable>
+  
+        </ScrollView>
+        </KeyboardAvoidingView>
+        </View>
+       );
+   }
 }
+
 
 const styles = StyleSheet.create({
     container: {

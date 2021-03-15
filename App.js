@@ -13,10 +13,8 @@ class App extends Component {
 
   render(){
 
-    return(
-    <NavigationContainer>
-    <MyApp/> 
-   </NavigationContainer>
+    return( 
+    <MyApp/>  
     )
     
   }
