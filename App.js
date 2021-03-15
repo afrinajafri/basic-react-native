@@ -1,5 +1,5 @@
-// import { NavigationContainer } from '@react-navigation/native'
-// import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native'
+import 'react-native-gesture-handler';
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, Image,
   Pressable, Button, TextInput, KeyboardAvoidingView, Platform,
@@ -14,11 +14,11 @@ class App extends Component {
   render(){
 
     return(
-      // <NavigationContainer>
+    <NavigationContainer>
     <MyApp>
 
     </MyApp>
-    // </NavigationContainer>
+   </NavigationContainer>
     )
     
   }
