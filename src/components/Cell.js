@@ -1,26 +1,46 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, View , Image} from 'react-native'; 
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 
-export default class Cell extends Component {
-    render() {
-        return (
-            <View>
-                <View style={{flexDirection: 'row', backgroundColor: 'grey',}}>
+class Cell extends Component {
+   render() {
+       return (
+        <TouchableOpacity 
 
+          onPress={()=>{
+              alert('hi');
+          }}
+          style={{flexDirection:'row', backgroundColor:'grey', padding: 6 }}
         
-                <Text style={{fontSize:18}}>Hello World!</Text>
-                <Image
-                style={{width:50, height:50, marginRight:12}}
-                source={{
-                    uri: 'https://reactnative.dev/img/tiny_logo.png'
-                }}
-                />
-                <Text>Hello World!</Text>
-                <Text>Hello World!</Text> 
-                </View>
-            </View>
-        )
-    }
+        >
+
+        <Image
+         style={{
+           width: 50,
+           height: 50,
+           marginRight: 12,
+         }}
+         source={{
+           uri: 'https://reactnative.dev/img/tiny_logo.png',
+         }}
+       />
+   
+       <View>
+         <Text style={{fontSize:17, fontWeight:'800', marginBottom:6}}>{this.props.title}</Text>
+         <Text style={{marginBottom:6}}>Hello World!</Text>
+         <Text style={{marginBottom:6}}>Hello World!</Text>
+       </View>
+         
+       </TouchableOpacity>
+       );
+   }
 }
 
-const styles = StyleSheet.create({})
+const styles = {
+   container: {
+       flex: 1,
+       justifyContent: 'center',
+       alignItems: 'center',
+   },
+};
+
+export default Cell;
